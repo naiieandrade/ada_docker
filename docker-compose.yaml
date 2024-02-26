@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  db:
+    build:
+      context: ./db
+    volumes:
+      - data_volume:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: my_database
+      POSTGRES_USER: my_user
+      POSTGRES_PASSWORD: my_password
+
+  app:
+    build:
+      context: ./app
+    depends_on:
+      - db
+    ports:
+      - "5000:5000"
+    networks:
+      - my_network
+
+volumes:
+  data_volume:
+
+networks:
+  my_network:
+
+
+# version: '3'
+
+# services:
+#   web: 
+#     build: '.'
+#     ports:
+#       - '8000:8000'
