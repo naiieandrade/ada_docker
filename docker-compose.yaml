@@ -31,3 +31,4 @@ volumes:
 networks:
   ada_network:
     driver: bridge
+    
