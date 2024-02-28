@@ -7,9 +7,11 @@ services:
     volumes:
       - data_volume:/var/lib/postgresql/data
     environment:
-      POSTGRES_DB: my_database
-      POSTGRES_USER: my_user
-      POSTGRES_PASSWORD: my_password
+      POSTGRES_DB: db_ada
+      POSTGRES_USER: user_ada
+      POSTGRES_PASSWORD: password_ada
+    networks:
+      - ada_network
 
   app:
     build:
@@ -19,19 +21,11 @@ services:
     ports:
       - "5000:5000"
     networks:
-      - my_network
+      - ada_network
 
 volumes:
   data_volume:
 
 networks:
-  my_network:
-
-
-# version: '3'
-
-# services:
-#   web: 
-#     build: '.'
-#     ports:
-#       - '8000:8000'
+  ada_network:
+    driver: bridge
