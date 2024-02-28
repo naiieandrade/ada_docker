@@ -24,7 +24,7 @@ Esse projeto é do curso de Devops da Ada, do módulo de conteinerização minis
 Este projeto é uma aplicação web "Chamada online" que salva no banco os nome de cada pessoa que preencher o campo informado. Feito utilizando o framework Flask e o banco de dados PostgreSQL.
 
 # Instalação
-git 
+
 ## Pré-requisito:
 É necessário ter o Docker e Docker Compose instalado para que possa executar o projeto.
 - [Instalação do Docker](https://docs.docker.com/engine/install/)
