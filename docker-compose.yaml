@@ -4,6 +4,7 @@ services:
   db:
     build:
       context: ./db
+    container_name: container_db
     volumes:
       - data_volume:/var/lib/postgresql/data
     environment:
@@ -16,6 +17,7 @@ services:
   app:
     build:
       context: ./app
+    container_name: container_flask
     depends_on:
       - db
     ports:

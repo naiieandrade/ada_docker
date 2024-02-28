@@ -59,7 +59,7 @@ Ao informar o seu nome na aplicação de Chamada online, será possível ver no 
 
 Para acessar o banco de dados é possível via bash do contêiner do banco de dados:
 ```
-docker exec -t ada_docker_db_1 bash
+docker exec -t container_db bash
 ```
 
 Depois que entrar no bash
@@ -79,3 +79,7 @@ Para derrubar os contêineres
 ```
 docker-compose down
 ```
+
+
+## Composição 
+Esse projeto é composto por duas imagens Docker, uma referente a aplicação Flask e outra ao banco de dados Postgres. O Docker-compose é o orquestrador que sobe essas duas imagens e as conecta por meio de uma rede `bridge`. As duas imagens estão nomeadas como `container_flask` e `container_db`.
